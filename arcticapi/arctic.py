@@ -1,4 +1,5 @@
 """Arctic client."""
+
 import aiohttp
 import asyncio
 from typing import List, Dict, Optional
@@ -9,6 +10,8 @@ from .utils import generate_headers
 
 @dataclass
 class BusLine:
+    """A line associated with a bus stop."""
+
     id: str
     name: str
     title: str
@@ -22,12 +25,16 @@ class BusLine:
 
 @dataclass
 class Location:
+    """Set of coordinates."""
+
     type: str
     coordinates: List[float]  # [longitude, latitude]
 
 
 @dataclass
 class BusStop:
+    """Description of a bus stop."""
+
     id: str
     common_name: str
     stop_type: Optional[str]
@@ -39,6 +46,8 @@ class BusStop:
 
 @dataclass
 class Visit:
+    """Description of a bus arrival at a stop."""
+
     direction: str
     destination_name: str
     aimed_arrival_time: datetime
